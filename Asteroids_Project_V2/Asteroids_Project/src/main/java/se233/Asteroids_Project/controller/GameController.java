@@ -900,7 +900,14 @@ public class GameController {
     }
 
     private int generateRandomAsteroidSize() {
-        return Math.random() < 0.6 ? 1 : 2;
+        double random = Math.random();
+        if (random < 0.35) {
+            return 1; // 35% chance for size 1
+        } else if (random < 0.7) {
+            return 2; // 35% chance for size 2
+        } else {
+            return 3; // 30% chance for size 3
+        }
     }
 
     private int generateRandomEnemy() {
